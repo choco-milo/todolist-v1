@@ -14,7 +14,7 @@ app.use(bodyParser.urlencoded({ extended: true }))
 app.use(express.static("public"))
 
 
-mongoose.connect("mongodb+srv://admin-janice:"+ process.env.DATABASE_PASSWORD + "@cluster0.dgkxfs3.mongodb.net/todolistDB");
+mongoose.connect("mongodb+srv://admin-janice:Jhurnyxx799@cluster0.dgkxfs3.mongodb.net/todolistDB");
 
 const itemSchema =  new mongoose.Schema({
     name : String
@@ -48,7 +48,7 @@ const defaultItems = [item1, item2, item3]
 
 app.get("/", async(req, res)=>{
     const bvalue = "default"
-    const data = await Item.find()
+    const data = await Item.find({})
     if (data.length === 0){
         Item.insertMany(defaultItems)
         res.redirect("/")
@@ -139,3 +139,4 @@ app.get('/:anything', (req, res) => {
 app.listen(port, ()=>{
     console.log(`Server is running on port ${port}`)
 })
+
