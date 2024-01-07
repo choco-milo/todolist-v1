@@ -4,6 +4,7 @@ const { default: mongoose } = require("mongoose")
 const date = require(__dirname + "/date.js")
 const _ = require('lodash');
 
+const port = process.env.PORT || 3000;
 
 
 
@@ -135,6 +136,6 @@ app.get('/:anything', (req, res) => {
 
 
 
-app.listen(3000, ()=>{
-    console.log("Server is running on port 3000")
+app.listen(port, ()=>{
+    console.log(`Server is running on port ${port}`)
 })
