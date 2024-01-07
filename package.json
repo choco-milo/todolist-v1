@@ -9,6 +9,9 @@
   },
   "author": "Janice",
   "license": "ISC",
+  "engines": {
+    "node": "20.8.1"
+  },
   "dependencies": {
     "body-parser": "^1.20.2",
     "ejs": "^3.1.9",
